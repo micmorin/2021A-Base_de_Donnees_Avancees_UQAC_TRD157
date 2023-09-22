@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Location" table="LOCATION" schema="C##SERVER3773">
+        <id name="idlocation" type="big_decimal">
+            <column name="IDLOCATION" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="client" class="tp3.entity.Client" fetch="select">
+            <column name="CLIENT" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="examplaire" class="tp3.entity.Examplaire" fetch="select">
+            <column name="EXAMPLAIRE" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="datelocation" type="date">
+            <column name="DATELOCATION" length="7" not-null="true" />
+        </property>
+        <property name="dateretour" type="date">
+            <column name="DATERETOUR" length="7" not-null="true" />
+        </property>
+        <property name="confirmationretour" type="date">
+            <column name="CONFIRMATIONRETOUR" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Cartedecredit" table="CARTEDECREDIT" schema="C##SERVER3773">
+        <id name="idcartedecredit" type="big_decimal">
+            <column name="IDCARTEDECREDIT" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="typecartedecredit" class="tp3.entity.Typecartedecredit" fetch="select">
+            <column name="TYPECARTE" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="numero" type="string">
+            <column name="NUMERO" length="76" not-null="true" />
+        </property>
+        <property name="dateexpiration" type="date">
+            <column name="DATEEXPIRATION" length="7" not-null="true" />
+        </property>
+        <property name="cvc" type="string">
+            <column name="CVC" length="16" not-null="true" />
+        </property>
+        <set name="clients" inverse="true">
+            <key>
+                <column name="CARTEDECREDIT" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="tp3.entity.Client" />
+        </set>
+    </class>
+</hibernate-mapping>

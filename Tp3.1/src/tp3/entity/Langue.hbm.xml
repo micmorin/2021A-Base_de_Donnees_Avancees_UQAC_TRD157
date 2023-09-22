@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Langue" table="LANGUE" schema="C##SERVER3773">
+        <id name="idlangue" type="big_decimal">
+            <column name="IDLANGUE" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomlangue" type="string">
+            <column name="NOMLANGUE" length="60" not-null="true" unique="true" />
+        </property>
+        <set name="films" inverse="true">
+            <key>
+                <column name="LANGUE" precision="22" scale="0" />
+            </key>
+            <one-to-many class="tp3.entity.Film" />
+        </set>
+    </class>
+</hibernate-mapping>

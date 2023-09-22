@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Genre" table="GENRE" schema="C##SERVER3773">
+        <id name="idgenre" type="big_decimal">
+            <column name="IDGENRE" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomgenre" type="string">
+            <column name="NOMGENRE" length="60" not-null="true" unique="true" />
+        </property>
+        <set name="films" inverse="false" table="LIENFILMGENRE">
+            <key>
+                <column name="GENREID" precision="22" scale="0" not-null="true" />
+            </key>
+            <many-to-many class="tp3.entity.Film">
+                <column name="FILMID" precision="22" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

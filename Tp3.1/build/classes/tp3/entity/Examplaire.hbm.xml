@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Examplaire" table="EXAMPLAIRE" schema="C##SERVER3773">
+        <id name="idexamplaire" type="big_decimal">
+            <column name="IDEXAMPLAIRE" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="film" class="tp3.entity.Film" fetch="select">
+            <column name="IDFILM" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <set name="locations" inverse="true">
+            <key>
+                <column name="EXAMPLAIRE" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="tp3.entity.Location" />
+        </set>
+    </class>
+</hibernate-mapping>

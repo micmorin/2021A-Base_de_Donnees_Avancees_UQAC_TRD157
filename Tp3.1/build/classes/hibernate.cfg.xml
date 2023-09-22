@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+    <property name="hibernate.connection.username">c##Server3773</property>
+    <property name="hibernate.connection.password">uqac123456</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
+    <mapping resource="tp3/entity/Typecartedecredit.hbm.xml"/>
+    <mapping resource="tp3/entity/Film.hbm.xml"/>
+    <mapping resource="tp3/entity/Examplaire.hbm.xml"/>
+    <mapping resource="tp3/entity/Langue.hbm.xml"/>
+    <mapping resource="tp3/entity/Client.hbm.xml"/>
+    <mapping resource="tp3/entity/Pays.hbm.xml"/>
+    <mapping resource="tp3/entity/Cartedecredit.hbm.xml"/>
+    <mapping resource="tp3/entity/Employe.hbm.xml"/>
+    <mapping resource="tp3/entity/Addresse.hbm.xml"/>
+    <mapping resource="tp3/entity/Forfait.hbm.xml"/>
+    <mapping resource="tp3/entity/Roletechnique.hbm.xml"/>
+    <mapping resource="tp3/entity/Personnage.hbm.xml"/>
+    <mapping resource="tp3/entity/Personneltechnique.hbm.xml"/>
+    <mapping resource="tp3/entity/Location.hbm.xml"/>
+    <mapping resource="tp3/entity/Acteur.hbm.xml"/>
+    <mapping resource="tp3/entity/Genre.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

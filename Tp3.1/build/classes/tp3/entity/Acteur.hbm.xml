@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Acteur" table="ACTEUR" schema="C##SERVER3773">
+        <id name="idacteur" type="big_decimal">
+            <column name="IDACTEUR" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="prenom" type="string">
+            <column name="PRENOM" length="80" not-null="true" />
+        </property>
+        <property name="nom" type="string">
+            <column name="NOM" length="80" not-null="true" />
+        </property>
+        <property name="datedenaissance" type="date">
+            <column name="DATEDENAISSANCE" length="7" />
+        </property>
+        <property name="lieudenaissance" type="string">
+            <column name="LIEUDENAISSANCE" length="80" />
+        </property>
+        <property name="biographie" type="clob">
+            <column name="BIOGRAPHIE" />
+        </property>
+        <set name="personnages" inverse="true">
+            <key>
+                <column name="ACTEUR" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="tp3.entity.Personnage" />
+        </set>
+    </class>
+</hibernate-mapping>

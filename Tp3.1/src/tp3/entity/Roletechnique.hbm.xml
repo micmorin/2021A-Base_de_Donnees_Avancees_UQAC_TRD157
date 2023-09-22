@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Roletechnique" table="ROLETECHNIQUE" schema="C##SERVER3773">
+        <id name="idrole" type="big_decimal">
+            <column name="IDROLE" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomrole" type="string">
+            <column name="NOMROLE" length="80" not-null="true" unique="true" />
+        </property>
+        <set name="personneltechniques" inverse="true">
+            <key>
+                <column name="ROLE" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="tp3.entity.Personneltechnique" />
+        </set>
+    </class>
+</hibernate-mapping>

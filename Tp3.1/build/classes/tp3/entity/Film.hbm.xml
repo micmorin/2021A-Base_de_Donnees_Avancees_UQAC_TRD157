@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Film" table="FILM" schema="C##SERVER3773">
+        <id name="idfilm" type="big_decimal">
+            <column name="IDFILM" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="langue" class="tp3.entity.Langue" fetch="select">
+            <column name="LANGUE" precision="22" scale="0" />
+        </many-to-one>
+        <property name="titre" type="string">
+            <column name="TITRE" length="160" not-null="true" />
+        </property>
+        <property name="anneedesortie" type="big_decimal">
+            <column name="ANNEEDESORTIE" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="resume" type="clob">
+            <column name="RESUME" />
+        </property>
+        <property name="duree" type="big_decimal">
+            <column name="DUREE" precision="22" scale="0" />
+        </property>
+        <set name="payses" inverse="false" table="LIENFILMPAYS">
+            <key>
+                <column name="FILMID" precision="22" scale="0" not-null="true" />
+            </key>
+            <many-to-many class="tp3.entity.Pays">
+                <column name="PAYSID" precision="22" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="personnages" inverse="false" table="LIENFILMPERSONNAGE">
+            <key>
+                <column name="FILMID" precision="22" scale="0" not-null="true" />
+            </key>
+            <many-to-many class="tp3.entity.Personnage">
+                <column name="PERSONNAGEID" precision="22" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="personneltechniques" inverse="false" table="LIENFILMPERSONNELTECHNIQUE">
+            <key>
+                <column name="FILMID" precision="22" scale="0" not-null="true" />
+            </key>
+            <many-to-many class="tp3.entity.Personneltechnique">
+                <column name="PERSONNELID" precision="22" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="genres" inverse="false" table="LIENFILMGENRE">
+            <key>
+                <column name="FILMID" precision="22" scale="0" not-null="true" />
+            </key>
+            <many-to-many class="tp3.entity.Genre">
+                <column name="GENREID" precision="22" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="examplaires" inverse="true">
+            <key>
+                <column name="IDFILM" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="tp3.entity.Examplaire" />
+        </set>
+    </class>
+</hibernate-mapping>

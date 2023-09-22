@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-schema="C##SERVER3773"/>
+  <table-filter match-name="EMPLOYE"/>
+  <table-filter match-name="ADDRESSE"/>
+  <table-filter match-name="LIENFILMPERSONNELTECHNIQUE"/>
+  <table-filter match-name="ACTEUR"/>
+  <table-filter match-name="TYPECARTEDECREDIT"/>
+  <table-filter match-name="LOCATION"/>
+  <table-filter match-name="LIENFILMPERSONNAGE"/>
+  <table-filter match-name="LIENFILMPAYS"/>
+  <table-filter match-name="PERSONNAGE"/>
+  <table-filter match-name="CLIENT"/>
+  <table-filter match-name="LIENFILMGENRE"/>
+  <table-filter match-name="ROLETECHNIQUE"/>
+  <table-filter match-name="CARTEDECREDIT"/>
+  <table-filter match-name="EXAMPLAIRE"/>
+  <table-filter match-name="LANGUE"/>
+  <table-filter match-name="FILM"/>
+  <table-filter match-name="FORFAIT"/>
+  <table-filter match-name="PERSONNELTECHNIQUE"/>
+  <table-filter match-name="PAYS"/>
+  <table-filter match-name="GENRE"/>
+</hibernate-reverse-engineering>

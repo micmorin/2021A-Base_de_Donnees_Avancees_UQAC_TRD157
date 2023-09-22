@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Personneltechnique" table="PERSONNELTECHNIQUE" schema="C##SERVER3773">
+        <id name="idpersonnel" type="big_decimal">
+            <column name="IDPERSONNEL" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="roletechnique" class="tp3.entity.Roletechnique" fetch="select">
+            <column name="ROLE" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="prenom" type="string">
+            <column name="PRENOM" length="80" not-null="true" />
+        </property>
+        <property name="nom" type="string">
+            <column name="NOM" length="80" />
+        </property>
+        <property name="datedenaissance" type="date">
+            <column name="DATEDENAISSANCE" length="7" />
+        </property>
+        <set name="films" inverse="false" table="LIENFILMPERSONNELTECHNIQUE">
+            <key>
+                <column name="PERSONNELID" precision="22" scale="0" not-null="true" />
+            </key>
+            <many-to-many class="tp3.entity.Film">
+                <column name="FILMID" precision="22" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

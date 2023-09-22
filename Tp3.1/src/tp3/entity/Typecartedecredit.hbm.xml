@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Typecartedecredit" table="TYPECARTEDECREDIT" schema="C##SERVER3773">
+        <id name="idtype" type="big_decimal">
+            <column name="IDTYPE" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomtype" type="string">
+            <column name="NOMTYPE" length="80" not-null="true" unique="true" />
+        </property>
+        <set name="cartedecredits" inverse="true">
+            <key>
+                <column name="TYPECARTE" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="tp3.entity.Cartedecredit" />
+        </set>
+    </class>
+</hibernate-mapping>

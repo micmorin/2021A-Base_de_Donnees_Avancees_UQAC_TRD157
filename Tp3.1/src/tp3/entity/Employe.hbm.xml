@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2021-11-22 12:55:05 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="tp3.entity.Employe" table="EMPLOYE" schema="C##SERVER3773">
+        <id name="matricule" type="string">
+            <column name="MATRICULE" length="32" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="addresse" class="tp3.entity.Addresse" fetch="select">
+            <column name="ADDRESSE" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="email" type="string">
+            <column name="EMAIL" length="400" not-null="true" unique="true" />
+        </property>
+        <property name="motdepasse" type="string">
+            <column name="MOTDEPASSE" length="88" not-null="true" />
+        </property>
+        <property name="prenom" type="string">
+            <column name="PRENOM" length="80" not-null="true" />
+        </property>
+        <property name="nom" type="string">
+            <column name="NOM" length="80" not-null="true" />
+        </property>
+        <property name="datedenaissance" type="date">
+            <column name="DATEDENAISSANCE" length="7" not-null="true" />
+        </property>
+        <property name="telephone" type="big_decimal">
+            <column name="TELEPHONE" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
