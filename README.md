@@ -25,7 +25,7 @@ Cas 3 : consultation interactive des films
     • Realisateur : PTP# pour le prenom et  PTN# pour le nom
     • Acteur :  {ActP1, ActP2, ActP3} pour le prenom et  {ActN1, ActN2, ActN3} pour le nom
 
-	Tous les crières sauf les années sont sensible à la case et cherche le critère dans le mots, ce qui veut dire que le critère n'a pas besoin d'être écris au long pour fonctionner.
+Tous les crières sauf les années sont sensible à la case et cherche le critère dans le mots, ce qui veut dire que le critère n'a pas besoin d'être écris au long pour fonctionner.
 
 Cas 4 : location de films 
 	Lorsque la fiche d'un film est sélectionnée, cliquer sur le bouton Louer permet d'effectuer la location du film. Appuyer sur ce boutton vérifie la disponibilité du film et la capacité du client à le louer selon son forfait.
